@@ -22,6 +22,7 @@ const io = new Server(httpserver, {
 io.on("connection", (socket) => {
   console.log("A user connected", socket.id);
 
+  
   socket.on("room:join", (room: string) => {
     socket.join(room);
     console.log(`User ${socket.id} joined room ${room}`);
